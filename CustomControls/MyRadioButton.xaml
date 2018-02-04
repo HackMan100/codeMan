@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    x:Class="OnlineDrive.CustomControls.MyRadioButton">
+	<Label x:Name="radiolabeltxt"  Grid.Row="0"  Grid.Column="1" Grid.ColumnSpan="2"
+                HorizontalOptions="Start" FontSize="19" VerticalOptions="CenterAndExpand" />
+    <skia:SKCanvasView   Grid.Column="0"  
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0"
+            PaintSurface="Handle_PaintSurface"/>
+</Grid>

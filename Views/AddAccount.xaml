@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:OnlineDrive.CustomControls"
+    x:Class="OnlineDrive.Views.AddAccount">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <OnPlatform.iOS>0,20,0,0</OnPlatform.iOS>
+      <OnPlatform.Android>0,0,0,0</OnPlatform.Android>
+    </OnPlatform>
+  </ContentPage.Padding>
+	<ContentPage.Content>
+<Grid HorizontalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand">
+   <Label Text="Add Online Account" TextColor="Teal" FontSize="22" Margin="0,15,0,0" Grid.Row="0"
+                Grid.Column="3" Grid.ColumnSpan="7"
+            VerticalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+             <local:MyRadioButton x:Name="radio1"  Grid.Row="1" Grid.Column="1"  Labeltxt ="DropBox" Grid.ColumnSpan="5">
+                <local:MyRadioButton.GestureRecognizers>
+                       <TapGestureRecognizer Tapped="radioclicked"/>
+                </local:MyRadioButton.GestureRecognizers>
+             </local:MyRadioButton>
+             <local:MyRadioButton x:Name ="radio2" Grid.Row="2" Grid.Column="1"  Labeltxt ="One Drive" Grid.ColumnSpan="5">
+              <local:MyRadioButton.GestureRecognizers>
+                       <TapGestureRecognizer Tapped="radioclicked"/>
+                </local:MyRadioButton.GestureRecognizers>
+            </local:MyRadioButton>
+             <local:MyRadioButton x:Name="radio3" Grid.Row="3" Grid.Column="1" 
+            Labeltxt ="Google Drive" Grid.ColumnSpan="5">
+             <local:MyRadioButton.GestureRecognizers>
+                       <TapGestureRecognizer Tapped="radioclicked"/>
+                </local:MyRadioButton.GestureRecognizers>
+            </local:MyRadioButton>
+             <local:MyRadioButton x:Name="radio4" Grid.Row="4" Grid.Column="1" 
+            Labeltxt ="Amazon Drive" Grid.ColumnSpan="5">
+             <local:MyRadioButton.GestureRecognizers>
+                       <TapGestureRecognizer Tapped="radioclicked"/>
+                </local:MyRadioButton.GestureRecognizers></local:MyRadioButton>
+            <local:MyCircleView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Labeltxt="Add">
+             <local:MyCircleView.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="Addclicked"/>
+              </local:MyCircleView.GestureRecognizers>
+               </local:MyCircleView>
+            <local:MyCircleView Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="3" Labeltxt="Skip">
+               <local:MyCircleView.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="Skipclicked"/>
+              </local:MyCircleView.GestureRecognizers>
+            </local:MyCircleView>
+      </Grid>
+	</ContentPage.Content>
+</ContentPage>

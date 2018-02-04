@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OnlineDrive.Views.DashBoard">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 20, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+   <Grid>
+        <Label Text="Images"  Grid.Row="0" Grid.Column="0"/>
+        <Label Text="Videos"  Grid.Row="0" Grid.Column="1"/>
+        <Label Text="Music"  Grid.Row="1" Grid.Column="0"/>
+        <Label Text="Documents" Grid.Row="1" Grid.Column="1" />
+        
+   </Grid>
+</ContentPage>
