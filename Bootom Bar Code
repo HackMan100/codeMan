@@ -1,0 +1,149 @@
+using System;
+using System.Collections.Generic;
+using ControlTemplete.View;
+using Xamarin.Forms;
+
+namespace ControlTemplete
+{
+    public partial class App : Application
+    {
+
+        public static NavigationPage NavigationPage { set; get; }
+        // public static Navigation nav {set;get;}
+        public List<BoxView> boxviewclassids;
+        public static HomePage RootPage;
+        public static bool MenuIsPresented
+        {
+            get
+            {
+                return RootPage.IsPresented;
+            }
+            set
+            {
+                RootPage.IsPresented = value;
+            }
+        }
+        public App()
+        {
+            InitializeComponent();
+            boxviewclassids = new List<BoxView>();
+
+            NavigationPage = new NavigationPage(new Sample_bottom());
+            MainPage = NavigationPage;
+            //var menuPage = new MyPage();
+            //NavigationPage = new NavigationPage(new ControlTempletePage());
+            //RootPage = new HomePage();
+            //RootPage.Master = menuPage;
+            //RootPage.Detail = NavigationPage;
+            //MainPage = RootPage;
+
+        }
+
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
+
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            if (App.MenuIsPresented == false)
+            {
+                App.MenuIsPresented = true;
+            }
+            else
+            {
+                App.MenuIsPresented = false;
+            }
+        }
+        void OnTapGestureRecognizerTapped(object sender, System.EventArgs e)
+        {
+            var a = sender as Label;
+            a.TextColor = Color.Red;
+        }
+        void OnTapGestureRecognizerTapped2(object sender, System.EventArgs e)
+        {
+            var a = sender as Label;
+            a.TextColor = Color.Red;
+        }
+
+        void Handle_Tapped(object sender, System.EventArgs e)
+        {
+            var b = sender as BoxView;
+            var a = (sender as BoxView).Parent as Grid;
+
+            foreach (var item in a.Children)
+            {
+                var c = item.GetType().Name;
+                if (c == "BoxView")
+                {
+                    boxviewclassids.Add((BoxView)item);
+                }
+            }
+
+            foreach (BoxView rbl in boxviewclassids)
+            {
+
+                if (rbl == b)
+                {
+
+                    rbl.BackgroundColor = Color.Red;
+
+                }
+                else
+                {
+                    rbl.BackgroundColor = Color.Gray;
+
+                }
+                //foreach (MyRadioButton rbl in boxviewclassids)
+                //{
+
+                //if (rbl == radiobtn)
+                //{
+                //    rbl.isselected = 1;
+                //    rbl.IsVisible = false;
+
+                //}
+                //else
+                //{
+                //    rbl.isselected = 2;
+                //    rbl.IsVisible = true;
+                //}
+
+                //}
+                //switch (a.ClassId)
+                //{
+                //    case "first":
+                //        Console.WriteLine("Case 1");
+                //        a.BackgroundColor = Color.Red;
+                //        break;
+                //    case "second":
+                //        Console.WriteLine("Case 2");
+                //        a.BackgroundColor = Color.Red;
+                //        break;
+                //    case "third":
+                //        Console.WriteLine("Case 3");
+                //        a.BackgroundColor = Color.Red;
+                //        break;
+                //    case "fourth":
+                //        Console.WriteLine("Case 4");
+                //        a.BackgroundColor = Color.Red;
+                //        break;
+                //    default:
+                //        Console.WriteLine("Default case");
+                //        a.BackgroundColor = Color.Gray;
+                //        break;
+                //}
+
+            }
+        }
+    }
+}
